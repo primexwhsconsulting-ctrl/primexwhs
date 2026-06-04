@@ -1,5 +1,6 @@
 import React from "react";
-import servicesHero from "../assets/IMG-20260603-WA0011_LE_upscale_prime.jpg";
+import servicesHero from "../assets/Our-Services.png";
+// import servicesHero from "../assets/IMG-20260603-WA0011_LE_upscale_prime.jpg";
 import serviceImage1 from "../assets/1.png";
 import serviceImage2 from "../assets/2.png";
 import serviceImage3 from "../assets/3.png";
