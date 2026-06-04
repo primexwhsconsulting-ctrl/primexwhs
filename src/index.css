@@ -20,3 +20,56 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
 }
 
+/* ---------------------------------------------------------------------------
+   Global typography system
+   One source of truth for headings and body text. Layout-only utilities
+   (margins, max-width, underlines, italics) stay inline at each usage so the
+   same type style can be reused in different layouts.
+--------------------------------------------------------------------------- */
+@layer components {
+  /* Page hero heading — used in every page hero (mobile + desktop blocks) */
+  .hero-title {
+    @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight;
+  }
+
+  /* Section heading — the "extrabold navy" headline above each content block */
+  .section-title {
+    @apply text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight;
+  }
+
+  /* Small uppercase kicker shown above a section title */
+  .eyebrow {
+    @apply text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-primex-teal;
+  }
+
+  /* Card / sub-section heading */
+  .card-title {
+    @apply text-lg font-bold text-primex-navy font-display;
+  }
+
+  /* Lead / intro copy — darker, slightly heavier (hero + intro paragraphs) */
+  .lead-text {
+    @apply text-base text-gray-800 font-medium leading-relaxed;
+  }
+
+  /* Standard section body copy */
+  .body-text {
+    @apply text-base text-gray-600 font-medium leading-relaxed;
+  }
+
+  /* Card / supporting description copy */
+  .card-text {
+    @apply text-sm text-gray-600 leading-relaxed;
+  }
+
+  /* Form field label */
+  .form-label {
+    @apply text-sm font-bold text-gray-700;
+  }
+
+  /* Form text input / textarea */
+  .form-input {
+    @apply w-full px-3.5 py-2.5 rounded border border-gray-300 text-base text-gray-800 outline-none focus:ring-1 focus:ring-primex-teal focus:border-primex-teal;
+  }
+}
+

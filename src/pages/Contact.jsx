@@ -28,7 +28,10 @@ export default function Contact() {
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
           access_key: import.meta.env.VITE_WEB3FORMS_KEY,
           name: formData.fullName,
@@ -56,27 +59,53 @@ export default function Contact() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* 1. HERO SECTION */}
-      <section
-        className="relative h-[80vh] bg-cover bg-center bg-no-repeat border-b border-gray-100 overflow-hidden"
-        style={{ backgroundImage: `url(${contactHero})` }}>
-
-
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-xl pl-6 sm:pl-10 lg:pl-16">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-primex-navy">
+      <section className="border-b border-gray-100 bg-white overflow-hidden">
+        {/* MOBILE / TABLET — stacked: text first, image below */}
+        <div className="lg:hidden">
+          <div className="px-6 sm:px-10 py-10 sm:py-12">
+            <h1 className="hero-title text-primex-navy">
               Let's Discuss Your
               <span className="block text-primex-orange">
                 Health &amp; Safety
               </span>
               Requirements
             </h1>
-            <div className="w-20 h-1 bg-primex-orange rounded-full mt-6 mb-8"></div>
-            <p className="text-lg md:text-xl text-gray-800 leading-relaxed font-medium max-w-lg">
+            <div className="w-20 h-1 bg-primex-orange rounded-full mt-5 mb-6"></div>
+            <p className="body-text sm:text-lg">
               Whether you need assistance developing an ISO 45001 management
               system, reviewing your current safety processes or improving
               workplace health and safety performance, we would be pleased to
               discuss your requirements.
             </p>
+          </div>
+          <img
+            src={contactHero}
+            alt="Primex WHS Consulting office — Melbourne, Victoria"
+            className="w-full h-auto block"
+          />
+        </div>
+
+        {/* DESKTOP — full-bleed background with overlaid text */}
+        <div
+          className="hidden lg:block relative h-[80vh] bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${contactHero})` }}>
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-xl pl-16 pr-8">
+              <h1 className="hero-title text-primex-navy">
+                Let's Discuss Your
+                <span className="block text-primex-orange">
+                  Health &amp; Safety
+                </span>
+                Requirements
+              </h1>
+              <div className="w-20 h-1 bg-primex-orange rounded-full mt-6 mb-8"></div>
+              <p className="lead-text text-xl max-w-lg">
+                Whether you need assistance developing an ISO 45001 management
+                system, reviewing your current safety processes or improving
+                workplace health and safety performance, we would be pleased to
+                discuss your requirements.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -90,9 +119,7 @@ export default function Contact() {
               {/* Contact Details Card */}
               <div className="bg-white p-6 rounded-lg border border-gray-150 shadow-sm space-y-4 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-primex-teal" />
-                <h2 className="text-lg font-bold text-primex-navy font-display">
-                  CONTACT DETAILS
-                </h2>
+                <h2 className="card-title">CONTACT DETAILS</h2>
 
                 <div className="space-y-3">
                   {/* Email */}
@@ -160,9 +187,7 @@ export default function Contact() {
               {/* Service Coverage Card */}
               <div className="bg-white p-6 rounded-lg border border-gray-150 shadow-sm space-y-4 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-primex-teal" />
-                <h2 className="text-lg font-bold text-primex-navy font-display">
-                  SERVICE COVERAGE
-                </h2>
+                <h2 className="card-title">SERVICE COVERAGE</h2>
 
                 <div className="space-y-3">
                   {/* On-Site */}
@@ -197,9 +222,7 @@ export default function Contact() {
             {/* Right Column: Form */}
             <div className="lg:col-span-8 bg-white p-6 md:p-10 rounded-lg border border-gray-150 shadow-sm">
               <div className="space-y-1.5 mb-6">
-                <h2 className="text-2xl font-bold text-primex-navy font-display">
-                  SEND US AN ENQUIRY
-                </h2>
+                <h2 className="card-title text-2xl">SEND US AN ENQUIRY</h2>
                 <p className="text-sm text-gray-500 font-medium">
                   Complete the form below and one of our consultants will reach
                   out within 24 hours.
@@ -238,9 +261,7 @@ export default function Contact() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {/* Full Name */}
                     <div className="flex flex-col space-y-1">
-                      <label
-                        htmlFor="fullName"
-                        className="text-sm font-bold text-gray-700">
+                      <label htmlFor="fullName" className="form-label">
                         Full Name
                       </label>
                       <input
@@ -251,15 +272,13 @@ export default function Contact() {
                         value={formData.fullName}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className="w-full px-3.5 py-2.5 rounded border border-gray-300 text-base focus:ring-1 focus:ring-primex-teal focus:border-primex-teal outline-none text-gray-800"
+                        className="form-input"
                       />
                     </div>
 
                     {/* Company Name */}
                     <div className="flex flex-col space-y-1">
-                      <label
-                        htmlFor="companyName"
-                        className="text-sm font-bold text-gray-700">
+                      <label htmlFor="companyName" className="form-label">
                         Company Name
                       </label>
                       <input
@@ -270,15 +289,13 @@ export default function Contact() {
                         value={formData.companyName}
                         onChange={handleChange}
                         placeholder="Your Organization"
-                        className="w-full px-3.5 py-2.5 rounded border border-gray-300 text-base focus:ring-1 focus:ring-primex-teal focus:border-primex-teal outline-none text-gray-800"
+                        className="form-input"
                       />
                     </div>
 
                     {/* Email */}
                     <div className="flex flex-col space-y-1">
-                      <label
-                        htmlFor="emailAddress"
-                        className="text-sm font-bold text-gray-700">
+                      <label htmlFor="emailAddress" className="form-label">
                         Email Address
                       </label>
                       <input
@@ -289,15 +306,13 @@ export default function Contact() {
                         value={formData.emailAddress}
                         onChange={handleChange}
                         placeholder="john@company.com"
-                        className="w-full px-3.5 py-2.5 rounded border border-gray-300 text-base focus:ring-1 focus:ring-primex-teal focus:border-primex-teal outline-none text-gray-800"
+                        className="form-input"
                       />
                     </div>
 
                     {/* Phone Number */}
                     <div className="flex flex-col space-y-1">
-                      <label
-                        htmlFor="phoneNumber"
-                        className="text-sm font-bold text-gray-700">
+                      <label htmlFor="phoneNumber" className="form-label">
                         Phone Number
                       </label>
                       <input
@@ -308,15 +323,13 @@ export default function Contact() {
                         value={formData.phoneNumber}
                         onChange={handleChange}
                         placeholder="+61 400 000 000"
-                        className="w-full px-3.5 py-2.5 rounded border border-gray-300 text-base focus:ring-1 focus:ring-primex-teal focus:border-primex-teal outline-none text-gray-800"
+                        className="form-input"
                       />
                     </div>
 
                     {/* Industry */}
                     <div className="flex flex-col space-y-1">
-                      <label
-                        htmlFor="industry"
-                        className="text-sm font-bold text-gray-700">
+                      <label htmlFor="industry" className="form-label">
                         Industry
                       </label>
                       <input
@@ -327,15 +340,13 @@ export default function Contact() {
                         value={formData.industry}
                         onChange={handleChange}
                         placeholder="e.g. Manufacturing"
-                        className="w-full px-3.5 py-2.5 rounded border border-gray-300 text-base focus:ring-1 focus:ring-primex-teal focus:border-primex-teal outline-none text-gray-800"
+                        className="form-input"
                       />
                     </div>
 
                     {/* Employee Range */}
                     <div className="flex flex-col space-y-1">
-                      <label
-                        htmlFor="employeeRange"
-                        className="text-sm font-bold text-gray-700">
+                      <label htmlFor="employeeRange" className="form-label">
                         Number of Employees
                       </label>
                       <input
@@ -346,16 +357,14 @@ export default function Contact() {
                         value={formData.employeeRange}
                         onChange={handleChange}
                         placeholder="e.g. 10 - 49"
-                        className="w-full px-3.5 py-2.5 rounded border border-gray-300 text-base focus:ring-1 focus:ring-primex-teal focus:border-primex-teal outline-none text-gray-800"
+                        className="form-input"
                       />
                     </div>
                   </div>
 
                   {/* Message */}
                   <div className="flex flex-col space-y-1">
-                    <label
-                      htmlFor="message"
-                      className="text-sm font-bold text-gray-700">
+                    <label htmlFor="message" className="form-label">
                       Message
                     </label>
                     <textarea
@@ -366,7 +375,7 @@ export default function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Tell us about your health & safety requirements..."
-                      className="w-full px-3.5 py-2.5 rounded border border-gray-300 text-base focus:ring-1 focus:ring-primex-teal focus:border-primex-teal outline-none text-gray-800"
+                      className="form-input"
                     />
                   </div>
 
