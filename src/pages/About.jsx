@@ -1,7 +1,7 @@
 import React from "react";
 // import aboutHero from "../assets/IMG-20260603-WA0010_LE_upscale_prime.jpg";
-import aboutHero from "../assets/IMG-20260603-WA0010_LE_upscale_prime.jpg";
-import serviceAreas from "../assets/About-Us.png";
+import aboutHero from "../assets/IMG-20260605-WA0003.jpg";
+import serviceAreas from "../assets/Service-Area-About-us.png";
 
 export default function About({ setCurrentPage }) {
   const coreValues = [
