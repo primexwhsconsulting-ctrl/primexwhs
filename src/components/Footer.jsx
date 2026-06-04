@@ -36,9 +36,9 @@ export default function Footer({ setCurrentPage }) {
               )}
             </div>
 
-            <p className="text-gray-600 text-sm font-medium">
+            {/* <p className="text-gray-600 text-sm font-medium">
               Practical Health & Safety Solutions
-            </p>
+            </p> */}
           </div>
 
           {/* Contact Info Column */}
