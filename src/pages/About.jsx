@@ -1,6 +1,7 @@
 import React from "react";
+// import aboutHero from "../assets/IMG-20260603-WA0010_LE_upscale_prime.jpg";
 import aboutHero from "../assets/IMG-20260603-WA0010_LE_upscale_prime.jpg";
-import serviceAreas from "../assets/Service-Area-About-us.png";
+import serviceAreas from "../assets/About-Us.png";
 
 export default function About({ setCurrentPage }) {
   const coreValues = [
@@ -98,19 +99,17 @@ export default function About({ setCurrentPage }) {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* HERO SECTION — text left, image right, CTA below */}
-      <section
-        className="relative h-[87vh] bg-cover bg-center bg-no-repeat border-b border-gray-100 overflow-hidden"
-        style={{ backgroundImage: `url(${aboutHero})` }}>
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-xl pl-10 sm:pl-16 lg:pl-28 flex flex-col space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              <span className="text-primex-navy">Primex WHS</span>
-              <br />
+      {/* HERO SECTION — stacked on mobile, overlaid on desktop */}
+      <section className="border-b border-gray-100 bg-white overflow-hidden">
+        {/* MOBILE / TABLET — stacked: text first, image below */}
+        <div className="lg:hidden">
+          <div className="px-6 sm:px-10 py-10 sm:py-12 flex flex-col space-y-4">
+            <h1 className="hero-title">
+              <span className="text-primex-navy">Primex WHS</span>{" "}
               <span className="text-primex-orange">Consulting</span>
             </h1>
             <div className="w-20 h-1 bg-primex-orange rounded-full"></div>
-            <div className="space-y-3 text-sm md:text-base text-gray-800 leading-relaxed font-medium">
+            <div className="space-y-3 lead-text">
               <p>
                 Primex WHS Consulting is a Victoria-based Workplace Health and
                 Safety consultancy focused on helping businesses develop
@@ -118,9 +117,56 @@ export default function About({ setCurrentPage }) {
                 aligned with ISO 45001:2018.
               </p>
               <p>
-                We understand the operational challenges faced by
-                manufacturing, warehousing, logistics, food production,
-                automotive, workshop, cleaning and labour hire businesses.
+                We understand the operational challenges faced by manufacturing,
+                warehousing, logistics, food production, automotive, workshop,
+                cleaning and labour hire businesses.
+              </p>
+              <p>
+                Our goal is to help organisations establish practical systems
+                that support safer workplaces and continual improvement.
+              </p>
+              <p>
+                We provide on-site consulting services throughout Victoria and
+                remote consulting services to businesses across Australia.
+              </p>
+            </div>
+            <div>
+              <button
+                onClick={() => setCurrentPage("contact")}
+                className="bg-primex-orange hover:bg-orange-600 text-white px-8 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer inline-block">
+                Book a Free Consultation
+              </button>
+            </div>
+          </div>
+          <img
+            src={aboutHero}
+            alt="Primex WHS Consulting — our purpose, mission, values and commitment"
+            className="w-full h-auto block"
+          />
+        </div>
+
+        {/* DESKTOP — full-bleed background with overlaid text */}
+        <div
+          className="hidden lg:flex relative min-h-[87vh] items-center bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${aboutHero})` }}>
+          <div className="max-w-xl xl:max-w-2xl pl-28 pr-8 py-16 flex flex-col space-y-4">
+            <h1 className="hero-title">
+              <span className="text-primex-navy">Primex WHS</span>
+              <br />
+              <span className="text-primex-orange">Consulting</span>
+            </h1>
+            <div className="w-20 h-1 bg-primex-orange rounded-full"></div>
+            <div className="space-y-3 lead-text">
+              <p>
+                Primex WHS Consulting is a Victoria-based Workplace Health and
+                Safety consultancy focused on helping businesses develop
+                practical Occupational Health and Safety Management Systems
+                aligned with ISO 45001:2018.
+              </p>
+              <p>
+                We understand the operational challenges faced by manufacturing,
+                warehousing, logistics, food production, automotive, workshop,
+                cleaning and labour hire businesses.
               </p>
               <p>
                 Our goal is to help organisations establish practical systems
@@ -169,9 +215,7 @@ export default function About({ setCurrentPage }) {
                     />
                   </svg>
                 </span>
-                <h2 className="text-xl md:text-2xl font-bold text-primex-navy font-display">
-                  Our Vision
-                </h2>
+                <h2 className="card-title text-xl md:text-2xl">Our Vision</h2>
               </div>
               <p className="text-base text-gray-700 font-medium italic border-l-4 border-primex-teal pl-3.5 leading-relaxed">
                 "To be a trusted WHS consulting partner for Australian
@@ -198,9 +242,7 @@ export default function About({ setCurrentPage }) {
                     />
                   </svg>
                 </span>
-                <h2 className="text-xl md:text-2xl font-bold text-primex-navy font-display">
-                  Our Mission
-                </h2>
+                <h2 className="card-title text-xl md:text-2xl">Our Mission</h2>
               </div>
               <p className="text-base text-gray-700 font-medium italic border-l-4 border-primex-teal pl-3.5 leading-relaxed">
                 "To help businesses build strong safety cultures through
@@ -216,7 +258,7 @@ export default function About({ setCurrentPage }) {
       <section className="bg-white py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight inline-block relative pb-3">
+            <h2 className="section-title inline-block relative pb-3">
               Our Core Values
               <span className="absolute bottom-0 left-1/4 right-1/4 h-1 bg-primex-teal rounded-full"></span>
             </h2>
@@ -230,12 +272,8 @@ export default function About({ setCurrentPage }) {
                 <div className="p-2.5 bg-teal-50 rounded inline-block border border-teal-100">
                   {val.icon}
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-primex-navy font-display">
-                  {val.title}
-                </h3>
-                <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                  {val.desc}
-                </p>
+                <h3 className="card-title md:text-xl">{val.title}</h3>
+                <p className="card-text font-medium">{val.desc}</p>
               </div>
             ))}
           </div>
@@ -256,10 +294,8 @@ export default function About({ setCurrentPage }) {
       {/* Ready to build safer workplace */}
       <section className="bg-white py-12 text-center border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight">
-            Ready to build a safer workplace?
-          </h2>
-          <p className="text-base text-gray-600 font-medium max-w-2xl mx-auto">
+          <h2 className="section-title">Ready to build a safer workplace?</h2>
+          <p className="body-text max-w-2xl mx-auto">
             Contact us today for a free initial consultation. Let's discuss how
             we can create a practical safety management system for your
             business.

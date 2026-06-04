@@ -114,11 +114,11 @@ export default function Services({ setCurrentPage }) {
         {/* MOBILE — stacked: text first, image below */}
         <div className="lg:hidden">
           <div className="px-4 sm:px-6 py-10 flex flex-col space-y-5">
-            <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight text-primex-navy">
+            <h1 className="hero-title text-primex-navy">
               Our <span className="text-primex-orange">Services</span>
             </h1>
             <div className="w-16 h-1 bg-primex-orange rounded-full"></div>
-            <p className="text-base text-gray-800 leading-relaxed font-medium">
+            <p className="lead-text">
               Comprehensive workplace health and safety solutions tailored to
               your organization's unique operational needs.
             </p>
@@ -145,13 +145,13 @@ export default function Services({ setCurrentPage }) {
           <div className="absolute inset-0 flex items-start pt-12 xl:pt-16">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
               <div className="max-w-md flex flex-col space-y-5">
-                <h1 className="text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight">
+                <h1 className="hero-title">
                   <span className="text-primex-navy">Our</span>
                   <br />
                   <span className="text-primex-orange">Services</span>
                 </h1>
                 <div className="w-20 h-1 bg-primex-orange rounded-full"></div>
-                <p className="text-base lg:text-lg text-gray-800 leading-relaxed font-medium">
+                <p className="lead-text lg:text-lg">
                   Comprehensive workplace health and safety solutions tailored
                   to your organization's unique operational needs.
                 </p>
@@ -173,11 +173,11 @@ export default function Services({ setCurrentPage }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-            <h2 className="text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight">
+            <h2 className="section-title">
               Professional WHS Solutions
             </h2>
             <div className="w-12 h-1 bg-primex-teal rounded-full mx-auto"></div>
-            <p className="text-base text-gray-600 font-medium">
+            <p className="body-text">
               We provide expert guidance and practical implementation support
               across all aspects of Occupational Health and Safety.
             </p>
@@ -200,11 +200,11 @@ export default function Services({ setCurrentPage }) {
 
                 <div className="p-6 space-y-3">
                   <div className="w-12 h-1 bg-primex-orange rounded-full"></div>
-                  <h3 className="text-lg font-bold text-primex-navy leading-snug font-display">
+                  <h3 className="card-title leading-snug">
                     {srv.title}
                   </h3>
 
-                  <p className="text-sm text-gray-600 font-medium leading-relaxed">
+                  <p className="card-text font-medium">
                     {srv.desc}
                   </p>
                 </div>
@@ -217,10 +217,10 @@ export default function Services({ setCurrentPage }) {
       {/* Bottom CTA section */}
       <section className="bg-white py-12 border-t border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight">
+          <h2 className="section-title">
             Ready to Improve Your Workplace Safety?
           </h2>
-          <p className="text-base text-gray-600 font-medium max-w-2xl mx-auto">
+          <p className="body-text max-w-2xl mx-auto">
             Contact us today for a free initial consultation to discuss how our
             services can be tailored to meet your compliance needs.
           </p>

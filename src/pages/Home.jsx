@@ -1,7 +1,6 @@
 import React from "react";
 
 // Import assets properly for Vite bundling
-import homeHero from "../assets/IMG-20260603-WA0008_LE_upscale_prime.jpg";
 import homeHerobg from "../assets/Home-Page.png";
 
 export default function Home({ setCurrentPage }) {
@@ -20,17 +19,16 @@ export default function Home({ setCurrentPage }) {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. HERO SECTION */}
-      <section
-        className="relative h-[80vh] bg-cover bg-center bg-no-repeat border-b border-gray-100 overflow-hidden"
-        style={{ backgroundImage: `url(${homeHerobg})` }}>
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-xl pl-10 sm:pl-16 lg:pl-28 flex flex-col space-y-4">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primex-navy tracking-tight leading-tight">
+      <section className="border-b border-gray-100 bg-white overflow-hidden">
+        {/* MOBILE / TABLET — stacked: text first, image below */}
+        <div className="lg:hidden">
+          <div className="px-6 sm:px-10 py-10 sm:py-12 flex flex-col space-y-4">
+            <h1 className="hero-title text-primex-navy">
               Health & Safety Solutions for
               <span className="block text-primex-orange">Businesses</span>
             </h1>
             <div className="w-20 h-1 bg-primex-orange rounded-full"></div>
-            <div className="space-y-3 text-sm md:text-base text-gray-800 leading-relaxed font-medium">
+            <div className="space-y-3 lead-text">
               <p>
                 Helping businesses develop effective Occupational Health &
                 Safety Management Systems that improve safety performance,
@@ -49,20 +47,58 @@ export default function Home({ setCurrentPage }) {
               </button>
             </div>
           </div>
+          <img
+            src={homeHerobg}
+            alt="Workplace safety management — risk assessment, compliance and continuous improvement"
+            className="w-full h-auto block"
+          />
+        </div>
+
+        {/* DESKTOP — full-bleed background with overlaid text */}
+        <div
+          className="hidden lg:block relative h-[80vh] bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${homeHerobg})` }}>
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-xl pl-28 pr-8 flex flex-col space-y-4">
+              <h1 className="hero-title text-primex-navy">
+                Health & Safety Solutions for
+                <span className="block text-primex-orange">Businesses</span>
+              </h1>
+              <div className="w-20 h-1 bg-primex-orange rounded-full"></div>
+              <div className="space-y-3 lead-text">
+                <p>
+                  Helping businesses develop effective Occupational Health &
+                  Safety Management Systems that improve safety performance,
+                  manage workplace risks and support continual improvement.
+                </p>
+                <p>
+                  We provide on-site WHS consulting services throughout Victoria
+                  and remote consulting services across Australia.
+                </p>
+              </div>
+              <div>
+                <button
+                  onClick={() => setCurrentPage("contact")}
+                  className="bg-primex-orange hover:bg-orange-600 text-white px-6 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer">
+                  Book a Free Consultation
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* 2. INDUSTRIES WE SUPPORT */}
       <section className="bg-gray-50 py-12 md:py-20 border-b border-gray-150">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             {/* Left Headline */}
             <div className="lg:col-span-5 flex flex-col justify-center space-y-3">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight leading-tight">
+              <h2 className="section-title leading-tight">
                 Industries We Support
               </h2>
               <div className="w-12 h-1 bg-primex-teal rounded-full mb-1"></div>
-              <p className="text-base text-gray-600 leading-relaxed font-normal">
+              <p className="body-text">
                 We support business owners, managers and key stakeholders to
                 develop, implement and maintain practical OHS/WHS systems. Our
                 services cover industries from small and medium enterprises
@@ -97,10 +133,10 @@ export default function Home({ setCurrentPage }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Title */}
           <div className="text-center mb-12">
-            <p className="text-3xl font-bold uppercase tracking-widest text-primex-teal mb-2">
+            <p className="eyebrow mb-2">
               Why Choose Us
             </p>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight inline-block relative pb-3">
+            <h2 className="section-title inline-block relative pb-3">
               WHY CHOOSE PRIMEX WHS CONSULTING
               <span className="absolute bottom-0 left-1/4 right-1/4 h-1 bg-primex-teal rounded-full"></span>
             </h2>
@@ -124,10 +160,10 @@ export default function Home({ setCurrentPage }) {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-primex-navy font-display">
+              <h3 className="card-title">
                 Practical Solutions
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="card-text">
                 We develop practical Workplace Health and Safety Management
                 Systems that are simple to implement and suitable for day-to-day
                 business operations.
@@ -150,10 +186,10 @@ export default function Home({ setCurrentPage }) {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-primex-navy font-display">
+              <h3 className="card-title">
                 Industry Experience
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="card-text">
                 We understand the operational challenges faced by manufacturing,
                 warehousing, logistics, food production and industrial
                 businesses.
@@ -176,10 +212,10 @@ export default function Home({ setCurrentPage }) {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-primex-navy font-display">
+              <h3 className="card-title">
                 ISO 45001 Focus
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="card-text">
                 Our services are focused on developing, implementing and
                 improving Occupational Health and Safety Management Systems
                 aligned with ISO 45001:2018.
@@ -205,10 +241,10 @@ export default function Home({ setCurrentPage }) {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-primex-navy font-display">
+              <h3 className="card-title">
                 Client-Focused Approach
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="card-text">
                 We work closely with our clients to understand their operations
                 and provide practical support tailored to their business needs.
               </p>
@@ -230,10 +266,10 @@ export default function Home({ setCurrentPage }) {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-primex-navy font-display">
+              <h3 className="card-title">
                 Continuous Improvement
               </h3>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="card-text">
                 We help organisations identify opportunities to strengthen
                 safety performance through structured and sustainable
                 improvement.
@@ -246,10 +282,10 @@ export default function Home({ setCurrentPage }) {
       {/* 4. READY TO IMPROVE BANNER */}
       <section className="bg-gray-50 py-12 border-t border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight">
+          <h2 className="section-title">
             Ready to Improve Your Workplace Health & Safety?
           </h2>
-          <p className="text-base text-gray-600 font-medium max-w-2xl mx-auto">
+          <p className="body-text max-w-2xl mx-auto">
             Contact Primex WHS Consulting today to discuss your requirements.
           </p>
           <div className="pt-1">
