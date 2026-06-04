@@ -24,7 +24,7 @@ export default function Home({ setCurrentPage }) {
         className="relative h-[80vh] bg-cover bg-center bg-no-repeat border-b border-gray-100 overflow-hidden"
         style={{ backgroundImage: `url(${homeHerobg})` }}>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-xl pl-6 sm:pl-10 lg:pl-16 flex flex-col space-y-4">
+          <div className="max-w-xl pl-10 sm:pl-16 lg:pl-28 flex flex-col space-y-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primex-navy tracking-tight leading-tight">
               Health & Safety Solutions for
               <span className="block text-primex-orange">Businesses</span>

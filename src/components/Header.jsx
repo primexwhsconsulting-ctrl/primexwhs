@@ -22,7 +22,7 @@ export default function Header({ currentPage = "home", setCurrentPage }) {
             onClick={() => setCurrentPage("home")}>
             {!logoError ? (
               <img
-                className="h-20 md:h-28 w-auto object-contain"
+                className="h-24 md:h-32 w-auto object-contain"
                 src={logo}
                 alt="Primex WHS Consulting"
                 onError={() => setLogoError(true)}

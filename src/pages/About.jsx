@@ -103,7 +103,7 @@ export default function About({ setCurrentPage }) {
         className="relative h-[87vh] bg-cover bg-center bg-no-repeat border-b border-gray-100 overflow-hidden"
         style={{ backgroundImage: `url(${aboutHero})` }}>
         <div className="absolute inset-0 flex items-center">
-          <div className="max-w-xl pl-6 sm:pl-10 lg:pl-16 flex flex-col space-y-4">
+          <div className="max-w-xl pl-10 sm:pl-16 lg:pl-28 flex flex-col space-y-4">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
               <span className="text-primex-navy">Primex WHS</span>
               <br />
