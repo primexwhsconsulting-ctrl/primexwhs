@@ -1,6 +1,6 @@
 import React from "react";
 import aboutHero from "../assets/IMG-20260603-WA0010_LE_upscale_prime.jpg";
-import serviceAreas from "../assets/service-areas.png";
+import serviceAreas from "../assets/Service-Area-About-us.png";
 
 export default function About({ setCurrentPage }) {
   const coreValues = [
@@ -100,58 +100,44 @@ export default function About({ setCurrentPage }) {
     <div className="flex flex-col min-h-screen">
       {/* HERO SECTION — text left, image right, CTA below */}
       <section
-        className="relative min-h-[560px] md:min-h-[680px] bg-cover bg-center border-b border-gray-100 overflow-hidden"
+        className="relative h-[87vh] bg-cover bg-center bg-no-repeat border-b border-gray-100 overflow-hidden"
         style={{ backgroundImage: `url(${aboutHero})` }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          {/* Two-column row */}
-          <div className="max-w-xl">
-            {/* LEFT: Text */}
-            <div className="flex flex-col space-y-7">
-              <span className="text-primex-orange text-sm font-bold uppercase tracking-widest">
-                {/* About */}
-              </span>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                <span className="text-primex-navy">Primex WHS</span>
-                <br />
-                <span className="text-primex-orange">Consulting</span>
-              </h1>
-              <div className="w-20 h-1 bg-primex-orange rounded-full"></div>
-              <div className="space-y-5 text-base md:text-lg text-gray-800 leading-relaxed font-medium">
-                <p>
-                  Primex WHS Consulting is a Victoria-based Workplace Health and
-                  Safety consultancy focused on helping businesses develop
-                  practical Occupational Health and Safety Management Systems
-                  aligned with ISO 45001:2018.
-                </p>
-                <p>
-                  We understand the operational challenges faced by
-                  manufacturing, warehousing, logistics, food production,
-                  automotive, workshop, cleaning and labour hire businesses.
-                </p>
-                <p>
-                  Our goal is to help organisations establish practical systems
-                  that support safer workplaces and continual improvement while
-                  remaining simple, effective and suitable for day-to-day
-                  operations.
-                </p>
-                <p>
-                  We provide on-site consulting services throughout Victoria and
-                  remote consulting services to businesses across Australia.
-                </p>
-              </div>
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-xl pl-6 sm:pl-10 lg:pl-16 flex flex-col space-y-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+              <span className="text-primex-navy">Primex WHS</span>
+              <br />
+              <span className="text-primex-orange">Consulting</span>
+            </h1>
+            <div className="w-20 h-1 bg-primex-orange rounded-full"></div>
+            <div className="space-y-3 text-sm md:text-base text-gray-800 leading-relaxed font-medium">
+              <p>
+                Primex WHS Consulting is a Victoria-based Workplace Health and
+                Safety consultancy focused on helping businesses develop
+                practical Occupational Health and Safety Management Systems
+                aligned with ISO 45001:2018.
+              </p>
+              <p>
+                We understand the operational challenges faced by
+                manufacturing, warehousing, logistics, food production,
+                automotive, workshop, cleaning and labour hire businesses.
+              </p>
+              <p>
+                Our goal is to help organisations establish practical systems
+                that support safer workplaces and continual improvement.
+              </p>
+              <p>
+                We provide on-site consulting services throughout Victoria and
+                remote consulting services to businesses across Australia.
+              </p>
             </div>
-
-            {/* RIGHT: Image — full uncropped */}
-          </div>
-
-          {/* Orange CTA button centered below the two columns */}
-          <div className="mt-12">
-            <button
-              onClick={() => setCurrentPage("contact")}
-              className="bg-primex-orange hover:bg-orange-600 text-white px-8 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer inline-block">
-              Book a Free Consultation
-            </button>
+            <div>
+              <button
+                onClick={() => setCurrentPage("contact")}
+                className="bg-primex-orange hover:bg-orange-600 text-white px-8 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer inline-block">
+                Book a Free Consultation
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -161,7 +147,7 @@ export default function About({ setCurrentPage }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Vision Card */}
-            <div className="bg-white p-6 md:p-8 rounded-lg border border-gray-150 space-y-3">
+            <div className="bg-white p-6 md:p-8 rounded-lg border border-primex-orange/45 shadow-[0_12px_32px_rgba(255,122,0,0.16)] md:border-gray-150 md:shadow-sm md:hover:-translate-y-1 md:hover:border-primex-orange/60 md:hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)] transition-all duration-300 space-y-3">
               <div className="flex items-center space-x-2.5">
                 <span className="p-2 bg-teal-50 rounded text-primex-teal">
                   <svg
@@ -196,7 +182,7 @@ export default function About({ setCurrentPage }) {
             </div>
 
             {/* Mission Card */}
-            <div className="bg-white p-6 md:p-8 rounded-lg border border-gray-150 space-y-3">
+            <div className="bg-white p-6 md:p-8 rounded-lg border border-primex-orange/45 shadow-[0_12px_32px_rgba(255,122,0,0.16)] md:border-gray-150 md:shadow-sm md:hover:-translate-y-1 md:hover:border-primex-orange/60 md:hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)] transition-all duration-300 space-y-3">
               <div className="flex items-center space-x-2.5">
                 <span className="p-2 bg-teal-50 rounded text-primex-teal">
                   <svg
@@ -240,8 +226,8 @@ export default function About({ setCurrentPage }) {
             {coreValues.map((val, idx) => (
               <div
                 key={idx}
-                className="bg-gray-50 p-6 rounded-lg border border-gray-150 space-y-3.5">
-                <div className="p-2.5 bg-white rounded inline-block border border-gray-100">
+                className="bg-white p-6 rounded-lg border border-primex-orange/45 shadow-[0_12px_32px_rgba(255,122,0,0.16)] md:border-gray-150 md:shadow-sm md:hover:-translate-y-1 md:hover:border-primex-orange/60 md:hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)] transition-all duration-300 space-y-3.5">
+                <div className="p-2.5 bg-teal-50 rounded inline-block border border-teal-100">
                   {val.icon}
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-primex-navy font-display">

@@ -2,6 +2,7 @@ import React from "react";
 
 // Import assets properly for Vite bundling
 import homeHero from "../assets/IMG-20260603-WA0008_LE_upscale_prime.jpg";
+import homeHerobg from "../assets/Home-Page.png";
 
 export default function Home({ setCurrentPage }) {
   const industries = [
@@ -20,33 +21,27 @@ export default function Home({ setCurrentPage }) {
     <div className="flex flex-col min-h-screen">
       {/* 1. HERO SECTION */}
       <section
-        className="relative min-h-[560px] md:min-h-[680px] bg-cover bg-center border-b border-gray-100 overflow-hidden"
-        style={{ backgroundImage: `url(${homeHero})` }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="max-w-xl flex flex-col space-y-5">
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-primex-navy tracking-tight leading-tight">
+        className="relative h-[80vh] bg-cover bg-center bg-no-repeat border-b border-gray-100 overflow-hidden"
+        style={{ backgroundImage: `url(${homeHerobg})` }}>
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-xl pl-6 sm:pl-10 lg:pl-16 flex flex-col space-y-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primex-navy tracking-tight leading-tight">
               Health & Safety Solutions for
-              <span className="block text-primex-orange">
-                Victorian Businesses
-              </span>
+              <span className="block text-primex-orange">Businesses</span>
             </h1>
             <div className="w-20 h-1 bg-primex-orange rounded-full"></div>
-
-            <p className="text-base md:text-lg text-gray-800 leading-relaxed font-medium">
-              Helping businesses develop effective Occupational Health & Safety
-              Management Systems that improve safety performance, manage
-              workplace risks and support continual improvement.
-            </p>
-
-            <p className="text-base md:text-lg text-gray-800 leading-relaxed font-medium">
-              Based in Victoria, we provide on-site WHS consulting services
-              throughout Victoria and remote consulting services across
-              Australia.
-            </p>
-
-            <div className="pt-2">
+            <div className="space-y-3 text-sm md:text-base text-gray-800 leading-relaxed font-medium">
+              <p>
+                Helping businesses develop effective Occupational Health &
+                Safety Management Systems that improve safety performance,
+                manage workplace risks and support continual improvement.
+              </p>
+              <p>
+                We provide on-site WHS consulting services throughout Victoria
+                and remote consulting services across Australia.
+              </p>
+            </div>
+            <div>
               <button
                 onClick={() => setCurrentPage("contact")}
                 className="bg-primex-orange hover:bg-orange-600 text-white px-6 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer">
@@ -60,7 +55,7 @@ export default function Home({ setCurrentPage }) {
       {/* 2. INDUSTRIES WE SUPPORT */}
       <section className="bg-gray-50 py-12 md:py-20 border-b border-gray-150">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             {/* Left Headline */}
             <div className="lg:col-span-5 flex flex-col justify-center space-y-3">
               <h2 className="text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight leading-tight">
@@ -77,7 +72,7 @@ export default function Home({ setCurrentPage }) {
             </div>
 
             {/* Right Industry Grid */}
-            <div className="lg:col-span-7 bg-white p-6 md:p-10 rounded-lg border border-gray-150 flex flex-col justify-center">
+            <div className="lg:col-span-7 flex flex-col justify-center">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6">
                 {industries.map((ind, idx) => (
                   <div
@@ -91,31 +86,6 @@ export default function Home({ setCurrentPage }) {
                     </span>
                   </div>
                 ))}
-
-                {/* Last inquiry block */}
-                <div className="flex items-start space-x-2.5 py-2 md:col-span-2 mt-3 pt-3 border-t border-gray-100">
-                  <svg
-                    className="w-5 h-5 text-primex-teal flex-shrink-0 mt-0.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <p className="text-sm text-gray-600 font-medium">
-                    What is not on this list?{" "}
-                    <button
-                      onClick={() => setCurrentPage("contact")}
-                      className="text-primex-teal font-bold hover:underline">
-                      Contact us
-                    </button>{" "}
-                    today to discuss your industry-specific requirements.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -127,7 +97,7 @@ export default function Home({ setCurrentPage }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Title */}
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest text-primex-teal mb-2">
+            <p className="text-3xl font-bold uppercase tracking-widest text-primex-teal mb-2">
               Why Choose Us
             </p>
             <h2 className="text-2xl md:text-3xl font-extrabold text-primex-navy tracking-tight inline-block relative pb-3">
@@ -139,7 +109,7 @@ export default function Home({ setCurrentPage }) {
           {/* 5-card grid: 3 on top row, 2 centered on bottom row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Card 1: Practical Solutions */}
-            <div className="bg-white rounded-lg border border-gray-150 p-7 flex flex-col space-y-3 shadow-sm">
+            <div className="bg-white rounded-lg border border-primex-orange/45 shadow-[0_12px_32px_rgba(255,122,0,0.16)] md:border-gray-150 md:shadow-sm md:hover:-translate-y-1 md:hover:border-primex-orange/60 md:hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)] transition-all duration-300 p-7 flex flex-col space-y-3">
               <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-teal-50 border border-teal-100">
                 <svg
                   className="w-6 h-6 text-primex-teal"
@@ -165,7 +135,7 @@ export default function Home({ setCurrentPage }) {
             </div>
 
             {/* Card 2: Industry Experience */}
-            <div className="bg-white rounded-lg border border-gray-150 p-7 flex flex-col space-y-3 shadow-sm">
+            <div className="bg-white rounded-lg border border-primex-orange/45 shadow-[0_12px_32px_rgba(255,122,0,0.16)] md:border-gray-150 md:shadow-sm md:hover:-translate-y-1 md:hover:border-primex-orange/60 md:hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)] transition-all duration-300 p-7 flex flex-col space-y-3">
               <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-teal-50 border border-teal-100">
                 <svg
                   className="w-6 h-6 text-primex-teal"
@@ -191,7 +161,7 @@ export default function Home({ setCurrentPage }) {
             </div>
 
             {/* Card 3: ISO 45001 Focus */}
-            <div className="bg-white rounded-lg border border-gray-150 p-7 flex flex-col space-y-3 shadow-sm">
+            <div className="bg-white rounded-lg border border-primex-orange/45 shadow-[0_12px_32px_rgba(255,122,0,0.16)] md:border-gray-150 md:shadow-sm md:hover:-translate-y-1 md:hover:border-primex-orange/60 md:hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)] transition-all duration-300 p-7 flex flex-col space-y-3">
               <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-teal-50 border border-teal-100">
                 <svg
                   className="w-6 h-6 text-primex-teal"
@@ -220,7 +190,7 @@ export default function Home({ setCurrentPage }) {
           {/* Bottom row — 2 cards centered */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 md:max-w-2xl md:mx-auto">
             {/* Card 4: Client-Focused Approach */}
-            <div className="bg-white rounded-lg border border-gray-150 p-7 flex flex-col space-y-3 shadow-sm">
+            <div className="bg-white rounded-lg border border-primex-orange/45 shadow-[0_12px_32px_rgba(255,122,0,0.16)] md:border-gray-150 md:shadow-sm md:hover:-translate-y-1 md:hover:border-primex-orange/60 md:hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)] transition-all duration-300 p-7 flex flex-col space-y-3">
               <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-teal-50 border border-teal-100">
                 <svg
                   className="w-6 h-6 text-primex-teal"
@@ -245,7 +215,7 @@ export default function Home({ setCurrentPage }) {
             </div>
 
             {/* Card 5: Continuous Improvement */}
-            <div className="bg-white rounded-lg border border-gray-150 p-7 flex flex-col space-y-3 shadow-sm">
+            <div className="bg-white rounded-lg border border-primex-orange/45 shadow-[0_12px_32px_rgba(255,122,0,0.16)] md:border-gray-150 md:shadow-sm md:hover:-translate-y-1 md:hover:border-primex-orange/60 md:hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)] transition-all duration-300 p-7 flex flex-col space-y-3">
               <div className="flex items-center justify-center w-11 h-11 rounded-lg bg-teal-50 border border-teal-100">
                 <svg
                   className="w-6 h-6 text-primex-teal"

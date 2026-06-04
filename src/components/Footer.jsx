@@ -6,15 +6,15 @@ export default function Footer({ setCurrentPage }) {
   return (
     <footer className="bg-gray-50 border-t border-gray-200 pt-12 pb-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-gray-200">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-gray-200 items-start">
           {/* Brand Column */}
-          <div className="flex flex-col space-y-3">
+          <div className="flex flex-col space-y-3 items-start text-left">
             <div
-              className="flex-shrink-0 flex items-center cursor-pointer"
+              className="flex-shrink-0 flex items-center justify-start cursor-pointer"
               onClick={() => setCurrentPage("home")}>
               {!logoError ? (
                 <img
-                  className="h-16 md:h-24 w-auto object-contain"
+                  className="h-20 md:h-28 w-auto object-contain"
                   src={logo}
                   alt="Primex WHS Consulting"
                   onError={() => setLogoError(true)}
@@ -42,54 +42,55 @@ export default function Footer({ setCurrentPage }) {
           </div>
 
           {/* Contact Info Column */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">
-              Contact Info
-            </h3>
-            <ul className="space-y-2 text-sm text-gray-700 font-medium">
-              <li className="flex items-start">
-                <span className="text-gray-900 mr-1.5 font-semibold">
-                  Location:
-                </span>
-                Melbourne, Victoria, Australia
-              </li>
-              <li className="flex items-center">
-                <span className="text-gray-900 mr-1.5 font-semibold">
-                  Email:
-                </span>
-                <a
-                  href="mailto:info@primexwhs.com.au"
-                  className="text-primex-teal hover:underline font-semibold">
-                  info@primexwhs.com.au
-                </a>
-              </li>
-            </ul>
+          <div className="flex flex-col md:items-center">
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">
+                Contact Info
+              </h3>
+              <ul className="space-y-2 text-sm text-gray-700 font-medium">
+                <li className="flex items-start">
+                  <span className="text-gray-900 mr-1.5 font-semibold">
+                    Location:
+                  </span>
+                  Melbourne, Victoria, Australia
+                </li>
+                <li className="flex items-center">
+                  <span className="text-gray-900 mr-1.5 font-semibold">
+                    Email:
+                  </span>
+                  <a
+                    href="mailto:info@primexwhs.com.au"
+                    className="text-primex-teal hover:underline font-semibold">
+                    info@primexwhs.com.au
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Services Column */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">
-              Services
-            </h3>
-            <ul className="space-y-2 text-sm text-gray-700 font-medium">
-              <li className="flex items-start">
-                <span className="text-gray-400 mr-2">•</span>
-                <span>On-Site Services: Victoria</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-gray-400 mr-2">•</span>
-                <span>Remote Services: Australia Wide</span>
-              </li>
-            </ul>
+          <div className="flex flex-col md:items-end">
+            <div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">
+                Services
+              </h3>
+              <ul className="space-y-2 text-sm text-gray-700 font-medium">
+                <li className="flex items-start">
+                  <span className="text-gray-400 mr-2">•</span>
+                  <span>On-Site Services: Victoria</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-gray-400 mr-2">•</span>
+                  <span>Remote Services: Australia Wide</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* Copyright Section */}
-        <div className="pt-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs font-medium">
-          <p className="mb-3 md:mb-0">
-            Copyright © {new Date().getFullYear()} Primex WHS Consulting. All
-            Rights Reserved.
-          </p>
+        <div className="pt-6 flex justify-center items-center text-gray-500 text-xs font-medium">
+          <p>Copyright © 2026 Primex WHS Consulting. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

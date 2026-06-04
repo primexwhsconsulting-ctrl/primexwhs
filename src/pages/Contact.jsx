@@ -57,12 +57,12 @@ export default function Contact() {
     <div className="flex flex-col min-h-screen bg-white">
       {/* 1. HERO SECTION */}
       <section
-        className="relative min-h-[520px] md:min-h-[650px] bg-cover bg-center border-b border-gray-100 overflow-hidden"
+        className="relative h-[80vh] bg-cover bg-center bg-no-repeat border-b border-gray-100 overflow-hidden"
         style={{ backgroundImage: `url(${contactHero})` }}>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/60 to-transparent" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="max-w-xl">
+
+        <div className="absolute inset-0 flex items-center">
+          <div className="max-w-xl pl-6 sm:pl-10 lg:pl-16">
             <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tight leading-tight text-primex-navy">
               Let's Discuss Your
               <span className="block text-primex-orange">

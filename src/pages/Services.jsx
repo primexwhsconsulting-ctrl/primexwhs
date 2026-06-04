@@ -110,7 +110,6 @@ export default function Services({ setCurrentPage }) {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="border-b border-gray-100 bg-white overflow-hidden">
-
         {/* MOBILE — stacked: text first, image below */}
         <div className="lg:hidden">
           <div className="px-4 sm:px-6 py-10 flex flex-col space-y-5">
@@ -128,15 +127,23 @@ export default function Services({ setCurrentPage }) {
               Book a Free Consultation
             </button>
           </div>
-          <img src={servicesHero} alt="Our Services" className="w-full h-auto block" />
+          <img
+            src={servicesHero}
+            alt="Our Services"
+            className="w-full h-auto block"
+          />
         </div>
 
         {/* DESKTOP — full image with text card overlay */}
-        <div className="hidden lg:block relative">
-          <img src={servicesHero} alt="Our Services" className="w-full h-auto block" />
+        <div className="hidden lg:block relative h-[120vh]">
+          <img
+            src={servicesHero}
+            alt="Our Services"
+            className="w-full h-full object-cover block"
+          />
           <div className="absolute inset-0 flex items-start pt-12 xl:pt-16">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
-              <div className="max-w-md flex flex-col space-y-5 bg-white/80 backdrop-blur-sm p-10 rounded-2xl shadow-sm">
+              <div className="max-w-md flex flex-col space-y-5">
                 <h1 className="text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight">
                   <span className="text-primex-navy">Our</span>
                   <br />
@@ -144,8 +151,8 @@ export default function Services({ setCurrentPage }) {
                 </h1>
                 <div className="w-20 h-1 bg-primex-orange rounded-full"></div>
                 <p className="text-base lg:text-lg text-gray-800 leading-relaxed font-medium">
-                  Comprehensive workplace health and safety solutions tailored to
-                  your organization's unique operational needs.
+                  Comprehensive workplace health and safety solutions tailored
+                  to your organization's unique operational needs.
                 </p>
                 <div className="pt-1">
                   <button
@@ -158,7 +165,6 @@ export default function Services({ setCurrentPage }) {
             </div>
           </div>
         </div>
-
       </section>
 
       {/* Services Grid Section */}
@@ -181,7 +187,7 @@ export default function Services({ setCurrentPage }) {
             {serviceList.map((srv, idx) => (
               <div
                 key={idx}
-                className="group bg-white rounded-lg border border-gray-150 overflow-hidden shadow-sm flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primex-orange/60 hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)]">
+                className="group bg-white rounded-lg border border-primex-orange/45 shadow-[0_12px_32px_rgba(255,122,0,0.16)] md:border-gray-150 md:shadow-sm md:hover:-translate-y-1 md:hover:border-primex-orange/60 md:hover:shadow-[0_18px_45px_rgba(255,122,0,0.22)] transition-all duration-300 overflow-hidden flex flex-col">
                 <div className="relative overflow-hidden bg-[#f7fbff]">
                   <img
                     src={serviceImages[idx]}
