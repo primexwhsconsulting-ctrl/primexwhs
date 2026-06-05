@@ -16,7 +16,7 @@ import serviceImage12 from "../assets/12.png";
 import serviceImage13 from "../assets/13.png";
 import serviceImage14 from "../assets/14.png";
 
-export default function Services({ setCurrentPage }) {
+export default function Services({ setCurrentPage, setScrollTarget }) {
   const serviceImages = [
     serviceImage1,
     serviceImage2,
@@ -123,7 +123,10 @@ export default function Services({ setCurrentPage }) {
               your organization's unique operational needs.
             </p>
             <button
-              onClick={() => setCurrentPage("contact")}
+              onClick={() => {
+                setCurrentPage("contact");
+                setScrollTarget("enquiry-form");
+              }}
               className="self-start bg-primex-orange hover:bg-orange-600 text-white px-6 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer">
               Book a Free Consultation
             </button>
@@ -157,7 +160,10 @@ export default function Services({ setCurrentPage }) {
                 </p>
                 <div className="pt-1">
                   <button
-                    onClick={() => setCurrentPage("contact")}
+                    onClick={() => {
+                      setCurrentPage("contact");
+                      setScrollTarget("enquiry-form");
+                    }}
                     className="bg-primex-orange hover:bg-orange-600 text-white px-6 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer">
                     Book a Free Consultation
                   </button>
@@ -226,7 +232,10 @@ export default function Services({ setCurrentPage }) {
           </p>
           <div className="pt-2 flex justify-center">
             <button
-              onClick={() => setCurrentPage("contact")}
+              onClick={() => {
+                setCurrentPage("contact");
+                setScrollTarget("enquiry-form");
+              }}
               className="w-full sm:w-auto bg-primex-orange hover:bg-orange-600 text-white px-8 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer">
               Book a Consultation
             </button>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png"; // Ens ure this path is correct for your project structure
 
-export default function Header({ currentPage = "home", setCurrentPage }) {
+export default function Header({ currentPage = "home", setCurrentPage, setScrollTarget }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
 
@@ -67,7 +67,10 @@ export default function Header({ currentPage = "home", setCurrentPage }) {
           {/* CTA Button - Standard size and Orange color */}
           <div className="hidden md:flex items-center">
             <button
-              onClick={() => setCurrentPage("contact")}
+              onClick={() => {
+                setCurrentPage("contact");
+                setScrollTarget("enquiry-form");
+              }}
               id="cta-book-consultation"
               className="bg-primex-orange hover:bg-orange-600 text-white px-5 py-2.5 rounded text-sm font-bold tracking-wide transition-colors cursor-pointer">
               Book a Free Consultation
@@ -140,6 +143,7 @@ export default function Header({ currentPage = "home", setCurrentPage }) {
               <button
                 onClick={() => {
                   setCurrentPage("contact");
+                  setScrollTarget("enquiry-form");
                   setIsMobileMenuOpen(false);
                 }}
                 className="w-full bg-primex-orange hover:bg-orange-600 text-white text-center py-2.5 rounded text-base font-bold cursor-pointer block">

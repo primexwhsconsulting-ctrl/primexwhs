@@ -3,7 +3,7 @@ import React from "react";
 import aboutHero from "../assets/IMG-20260605-WA0003.jpg";
 import serviceAreas from "../assets/Service-Area-About-us.png";
 
-export default function About({ setCurrentPage }) {
+export default function About({ setCurrentPage, setScrollTarget }) {
   const coreValues = [
     {
       title: "Integrity",
@@ -132,7 +132,10 @@ export default function About({ setCurrentPage }) {
             </div>
             <div>
               <button
-                onClick={() => setCurrentPage("contact")}
+                onClick={() => {
+                  setCurrentPage("contact");
+                  setScrollTarget("enquiry-form");
+                }}
                 className="bg-primex-orange hover:bg-orange-600 text-white px-8 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer inline-block">
                 Book a Free Consultation
               </button>
@@ -179,7 +182,10 @@ export default function About({ setCurrentPage }) {
             </div>
             <div>
               <button
-                onClick={() => setCurrentPage("contact")}
+                onClick={() => {
+                  setCurrentPage("contact");
+                  setScrollTarget("enquiry-form");
+                }}
                 className="bg-primex-orange hover:bg-orange-600 text-white px-8 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer inline-block">
                 Book a Free Consultation
               </button>
@@ -302,7 +308,10 @@ export default function About({ setCurrentPage }) {
           </p>
           <div className="pt-1">
             <button
-              onClick={() => setCurrentPage("contact")}
+              onClick={() => {
+                setCurrentPage("contact");
+                setScrollTarget("enquiry-form");
+              }}
               className="bg-primex-orange hover:bg-orange-600 text-white px-8 py-3.5 rounded text-base font-bold tracking-wide transition-colors cursor-pointer inline-block">
               Book a Free Consultation
             </button>

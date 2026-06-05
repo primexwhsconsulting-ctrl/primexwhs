@@ -220,7 +220,9 @@ export default function Contact() {
             </div>
 
             {/* Right Column: Form */}
-            <div className="lg:col-span-8 bg-white p-6 md:p-10 rounded-lg border border-gray-150 shadow-sm">
+            <div
+              id="enquiry-form"
+              className="lg:col-span-8 bg-white p-6 md:p-10 rounded-lg border border-gray-150 shadow-sm scroll-mt-28 md:scroll-mt-36">
               <div className="space-y-1.5 mb-6">
                 <h2 className="card-title text-2xl">SEND US AN ENQUIRY</h2>
                 <p className="text-sm text-gray-500 font-medium">

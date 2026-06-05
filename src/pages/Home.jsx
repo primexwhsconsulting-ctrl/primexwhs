@@ -3,7 +3,7 @@ import React from "react";
 // Import assets properly for Vite bundling
 import homeHerobg from "../assets/Home-Page.png";
 
-export default function Home({ setCurrentPage }) {
+export default function Home({ setCurrentPage, setScrollTarget }) {
   const industries = [
     "Manufacturing",
     "Logistics & Transport",
@@ -41,7 +41,10 @@ export default function Home({ setCurrentPage }) {
             </div>
             <div>
               <button
-                onClick={() => setCurrentPage("contact")}
+                onClick={() => {
+                  setCurrentPage("contact");
+                  setScrollTarget("enquiry-form");
+                }}
                 className="bg-primex-orange hover:bg-orange-600 text-white px-6 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer">
                 Book a Free Consultation
               </button>
@@ -78,7 +81,10 @@ export default function Home({ setCurrentPage }) {
               </div>
               <div>
                 <button
-                  onClick={() => setCurrentPage("contact")}
+                  onClick={() => {
+                    setCurrentPage("contact");
+                    setScrollTarget("enquiry-form");
+                  }}
                   className="bg-primex-orange hover:bg-orange-600 text-white px-6 py-3 rounded text-base font-bold tracking-wide transition-colors cursor-pointer">
                   Book a Free Consultation
                 </button>
